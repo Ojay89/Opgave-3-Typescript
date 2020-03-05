@@ -1,54 +1,20 @@
-
-let input: string = "";
 let textInput: HTMLInputElement = <HTMLInputElement>document.getElementById("textInput");
 let textOutput: HTMLDivElement = <HTMLDivElement>document.getElementById("textOutput");
-
+let dropDownElement: HTMLSelectElement = <HTMLSelectElement>document.getElementById("dropDown");
 
 let showItButton: HTMLInputElement = <HTMLInputElement>document.getElementById("doItButton");
-showItButton.addEventListener("click", showWords)
+showItButton.addEventListener("click", toUpperOrLower)
 
-let changeToUpperCase: HTMLInputElement = <HTMLInputElement>document.getElementById("toUpperCase");
-changeToUpperCase.addEventListener("click", upper)
+function toUpperOrLower(): void {
 
-let ChangeToLowerCase: HTMLInputElement = <HTMLInputElement>document.getElementById("toLowerCase");
-ChangeToLowerCase.addEventListener("click", lower)
-
-// let doItButton: HTMLInputElement = <HTMLInputElement>document.getElementById("doItButton");
-// doItButton.addEventListener("click", SaveWords)
-
-function showWords(): void {
-    
+    let dropDown: string = dropDownElement.value;
     let userinput: string = textInput.value
     let input = userinput;
-
-    if (input.length > 0) {
-    textOutput.innerHTML = String(input);
-    }
-    else {
-    textOutput.innerHTML = "<i>Empty<i>";
-    }
-}
-
-
-function upper(): void {
-    let userinput: string = textInput.value
-    let input = userinput;
-
-    if(changeToUpperCase) {
-    String (input).toUpperCase;
-    }
-}
-
-function lower(): void {
     
+    if(dropDown === "toUpperCase")
+        textOutput.innerHTML = String(input).toUpperCase();
+    
+    if(dropDown === "toLowerCase")
+        textOutput.innerHTML = String(input).toLowerCase();
     
 }
-
-// function SaveWords(): void {
-//     let textInput: HTMLInputElement = <HTMLInputElement>document.getElementById("textInput");
-//     let userinput: string = textInput.value;
-//     words.push(userinput);
-// }
-
-
-
